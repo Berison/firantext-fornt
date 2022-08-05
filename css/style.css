@@ -416,6 +416,11 @@ strong em {
   font-style: italic;
 }
 
+.swiper-wrapper {
+  -webkit-transition-timing-function: linear;
+  transition-timing-function: linear;
+}
+
 .header-info {
   padding: 7px 0;
   background-color: #101010;

@@ -5,14 +5,16 @@ var HomePage = function HomePage() {
   var swiper = new Swiper('.swiper-home-category', {
     slidesPerView: 6,
     spaceBetween: 35,
-    freeMode: true,
+    // loop: true,
+    // freeMode: true,
     autoplay: {
       delay: 2,
       disableOnInteraction: false
     },
-    speed: 3000,
+    speed: 4000,
     grabCursor: true,
     mousewheelControl: true,
+    waitForTransition: false,
     scrollbar: {
       el: '.swiper-scrollbar',
       draggable: true
