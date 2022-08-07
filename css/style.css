@@ -391,6 +391,11 @@ body {
   overflow-x: hidden;
 }
 
+html.hidden,
+body.hidden {
+  overflow: hidden;
+}
+
 a.link:hover {
   text-decoration: underline;
 }
@@ -470,6 +475,30 @@ strong em {
 
 .header-main__burger {
   display: none;
+  position: relative;
+  z-index: 10;
+}
+
+.header-main__burger.active span:nth-of-type(2) {
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.header-main__burger.active span:first-of-type {
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.header-main__burger.active span:last-of-type {
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  top: -18px;
 }
 
 .header-main__search {
@@ -1134,6 +1163,53 @@ strong em {
   transition: all 0.5s;
 }
 
+.burger-inner {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  z-index: 2;
+  height: 100%;
+  width: 100%;
+  background-color: #fff;
+}
+
+.burger-inner.active {
+  left: 0;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.burger-inner__nav {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: 0 20px;
+}
+
+.burger-inner__nav li a {
+  font-weight: 500;
+  font-size: 1.115rem;
+  line-height: 1rem;
+  color: #101010;
+}
+
+.burger-inner__nav li:not(:last-of-type) {
+  margin-bottom: 30px;
+}
+
 @media (max-width: 1200px) {
   .row {
     margin: 0;
@@ -1263,6 +1339,9 @@ strong em {
     display: block;
     height: 1px;
     background-color: #101010;
+    position: relative;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
   }
 
   .header-main__burger span:not(:last-of-type) {
@@ -1272,6 +1351,8 @@ strong em {
   .header-main__logo {
     width: 80%;
     margin-bottom: 25px;
+    position: relative;
+    z-index: 11;
   }
 
   .header-main__logo svg {
@@ -1318,7 +1399,7 @@ strong em {
 
 @media (max-width: 576px) {
   .main-screen {
-    padding-top: 11px;
+    padding: 11px 0 40px;
   }
 
   .main-screen__left {
@@ -1358,6 +1439,10 @@ strong em {
     font-size: 2rem;
     line-height: 2.688rem;
     margin-bottom: 32px;
+  }
+
+  .category-section {
+    padding: 40px 0;
   }
 
   .category-section .swiper .swiper-slide__image img {
