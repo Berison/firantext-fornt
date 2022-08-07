@@ -25,8 +25,7 @@
     }
 
     table {
-      border: 1px solid #333;
-      padding: 10px;
+      border-collapse: collapse;
     }
     th {
       width: 20%;
@@ -35,11 +34,26 @@
     thead {
       margin-bottom: 20px;
     }
+    thead tr {
+      border: 0;
+    }
+    tr {
+      border-bottom: 1px solid #c1c1c1;
+    }
     td {
       padding: 10px 0;
     }
     td.dev {
       color: #eb7142;
+    }
+    td.qa {
+      color: #205aff;
+    }
+    td.wait {
+      color: #ff20f8;
+    }
+    td.no-dev {
+      opacity: .4;
     }
   </style>
 </head>
@@ -51,13 +65,76 @@
         <th>Сторінка</th>
         <th>Статус</th>
         <th>Посилання</th>
+        <th>Додатковий опис</th>
       </tr>
     </thead>
     <tbody>
       <tr>
         <td>Головна</td>
-        <td class="dev">В розробці</td>
+        <td class="wait">Чекаю відповідь</td>
         <td><a href="./">Посилання</a></td>
+        <td>Чекаю відповідь на записання з провиду стрілки вниз до категорій</td>
+      </tr>
+      <tr>
+        <td>Категорій</td>
+        <td class="qa">Перевірка/тестування</td>
+        <td><a href="./category-page.html">Посилання</a></td>
+        <td>Самі категорії буде зроблено уже на самій інтеграції</td>
+      </tr>
+      <tr>
+        <td>Сторінка продукту</td>
+        <td class="no-dev">Не в розробці</td>
+        <td><a href="#"></a></td>
+      </tr>
+      <tr>
+        <td>Реєстрація</td>
+        <td class="dev">В розробці</td>
+        <td><a href="#"></a></td>
+      </tr>
+      <tr>
+        <td>Лічний кабінет (Moje konto)</td>
+        <td class="no-dev">Не в розробці</td>
+        <td><a href="#"></a></td>
+      </tr>
+      <tr>
+        <td>Лічний кабінет (Moje zamówienia)</td>
+        <td class="no-dev">Не в розробці</td>
+        <td><a href="#"></a></td>
+      </tr>
+      <tr>
+        <td>Лічний кабінет (Ulubione)</td>
+        <td class="no-dev">Не в розробці</td>
+        <td><a href="#"></a></td>
+      </tr>
+      <tr>
+        <td>Лічний кабінет (Moje adresy)</td>
+        <td class="no-dev">Не в розробці</td>
+        <td><a href="#"></a></td>
+      </tr>
+      <tr>
+        <td>Відправка замовлення (Nowy klient)</td>
+        <td class="no-dev">Не в розробці</td>
+        <td><a href="#"></a></td>
+      </tr>
+      <tr>
+        <td>Відправка замовлення (Posiadam już konto)</td>
+        <td class="no-dev">Не в розробці</td>
+        <td><a href="#"></a></td>
+      </tr>
+      <tr>
+        <td>Замовлення зроблено</td>
+        <td class="no-dev">Не в розробці</td>
+        <td><a href="#"></a></td>
+      </tr>
+      <tr>
+        <td>Про нас</td>
+        <td class="no-dev">Не в розробці</td>
+        <td><a href="#"></a></td>
+      </tr>
+      <tr>
+        <td>Faq</td>
+        <td class="no-dev">Не в розробці</td>
+        <td><a href="#"></a></td>
       </tr>
     </tbody>
   </table>
