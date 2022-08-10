@@ -459,6 +459,68 @@ strong em {
   transform: translateY(-50%);
 }
 
+.button-up {
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  z-index: 10;
+  visibility: visible;
+  opacity: 1;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.button-up.hidden {
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.input {
+  display: block;
+  max-width: 478px;
+  width: 100%;
+  padding: 12px;
+  background: transparent;
+  border: 1px solid #101010;
+  outline: none;
+  font-family: "Roboto";
+  font-size: 0.875rem;
+  line-height: 1rem;
+  color: #101010;
+}
+
+.input::-webkit-input-placeholder {
+  font-size: 0.875rem;
+  line-height: 1rem;
+  color: #676767;
+}
+
+.input::-moz-placeholder {
+  font-size: 0.875rem;
+  line-height: 1rem;
+  color: #676767;
+}
+
+.input:-ms-input-placeholder {
+  font-size: 0.875rem;
+  line-height: 1rem;
+  color: #676767;
+}
+
+.input::-ms-input-placeholder {
+  font-size: 0.875rem;
+  line-height: 1rem;
+  color: #676767;
+}
+
+.input::placeholder {
+  font-size: 0.875rem;
+  line-height: 1rem;
+  color: #676767;
+}
+
 .swiper-wrapper {
   -webkit-transition-timing-function: linear;
   transition-timing-function: linear;
@@ -1248,6 +1310,16 @@ strong em {
   margin-bottom: 30px;
 }
 
+.reverse-mob {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
 .category-page-head {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1496,6 +1568,169 @@ strong em {
   margin: 0 4px;
 }
 
+.register-section {
+  padding: 64px 0 80px;
+}
+
+.register-inner {
+  max-width: 478px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.register-inner__title {
+  margin-bottom: 40px;
+}
+
+.register-inner__title strong {
+  font-family: "Roboto";
+  font-weight: 400;
+  font-size: 2rem;
+  line-height: 2.375rem;
+  text-align: center;
+  text-transform: uppercase;
+  color: #101010;
+  display: block;
+}
+
+.register-inner-form form {
+  margin-bottom: 32px;
+}
+
+.register-inner-form label {
+  display: block;
+}
+
+.register-inner-form label:not(:last-of-type) {
+  margin-bottom: 12px;
+}
+
+.register-inner-form label p {
+  font-size: 1rem;
+  line-height: 1.188rem;
+  text-transform: uppercase;
+  color: #101010;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.register-inner-form label span {
+  font-size: 1rem;
+  line-height: 1.188rem;
+  text-transform: uppercase;
+  color: #D29235;
+}
+
+.register-inner-form .register-politics {
+  margin-bottom: 25px;
+}
+
+.register-inner-form .register-politics,
+.register-inner-form .register-rules {
+  padding-left: 32px;
+  position: relative;
+}
+
+.register-inner-form .register-politics input,
+.register-inner-form .register-rules input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  position: absolute;
+  top: 6px;
+  left: 24px;
+}
+
+.register-inner-form .register-politics input::after,
+.register-inner-form .register-rules input::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: -27px;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  height: 22px;
+  width: 22px;
+  border: 1px solid #101010;
+  background: transparent;
+}
+
+.register-inner-form .register-politics input::before,
+.register-inner-form .register-rules input::before {
+  content: url("data:image/svg+xml,%3Csvg width='15' height='13' viewBox='0 0 15 13' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 9L5 12L14 1' stroke='%23101010'/%3E%3C/svg%3E%0A");
+  position: absolute;
+  top: -6px;
+  left: -22px;
+  opacity: 0;
+}
+
+.register-inner-form .register-politics input:checked::before,
+.register-inner-form .register-rules input:checked::before {
+  opacity: 1;
+}
+
+.register-inner-form .register-politics p,
+.register-inner-form .register-rules p {
+  font-weight: 300;
+  font-size: 0.875rem;
+  line-height: 1rem;
+  color: #101010;
+  display: inline;
+  text-transform: initial;
+}
+
+.register-inner-form .register-politics p b,
+.register-inner-form .register-rules p b {
+  font-weight: 500;
+}
+
+.register-inner-form .btn-register {
+  margin-top: 36px;
+  font-weight: 500;
+  font-size: 1.125rem;
+  line-height: 1.313rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background-color: #101010;
+  text-align: center;
+  padding: 13px 5px;
+  width: 100%;
+  color: #fff;
+}
+
+.register-inner-form .continued-social .google {
+  margin-bottom: 8px;
+}
+
+.register-inner-form .continued-social a {
+  padding: 12px 5px;
+  border: 1px solid #101010;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.register-inner-form .continued-social a svg {
+  margin-right: 12px;
+}
+
+.register-inner-form .continued-social a span {
+  font-weight: 500;
+  font-size: 1.125rem;
+  line-height: 1.313rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #101010;
+}
+
 @media (max-width: 1200px) {
   .row {
     margin: 0;
@@ -1522,6 +1757,10 @@ strong em {
 }
 
 @media (max-width: 996px) {
+  .button-up {
+    display: none;
+  }
+
   .header-main__logo svg {
     height: 23px;
     width: 162px;
@@ -1826,6 +2065,13 @@ strong em {
     display: block;
   }
 
+  .reverse-mob {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+    -ms-flex-direction: column-reverse;
+    flex-direction: column-reverse;
+  }
+
   .category-page-head {
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
@@ -1882,6 +2128,29 @@ strong em {
   .category-page-info__product span {
     font-size: 0.875rem;
     line-height: 1rem;
+  }
+
+  .register-section {
+    padding: 20px 0 40px;
+  }
+
+  .register-inner__title strong {
+    font-size: 1.5rem;
+    line-height: 1.75rem;
+  }
+
+  .register-inner-form .register-politics input,
+  .register-inner-form .register-rules input {
+    top: 13px;
+  }
+
+  .register-inner-form .register-politics p,
+  .register-inner-form .register-rules p {
+    font-size: 0.75rem;
+  }
+
+  .register-inner-form .continued-social a span {
+    font-size: 1rem;
   }
 }
 

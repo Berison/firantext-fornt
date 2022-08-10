@@ -23,7 +23,28 @@ var DefaultScript = function DefaultScript() {
       burger.classList.add('active');
       hiddenBody(false);
     }
+  }); // Arrow up
+
+  var buttonUp = document.querySelector('.button-up');
+
+  var goToTop = function goToTop() {
+    document.body.scrollIntoView({
+      behavior: "smooth"
+    });
+  };
+
+  var scrollContainer = function scrollContainer() {
+    return document.documentElement || document.body;
+  };
+
+  document.addEventListener("scroll", function () {
+    if (scrollContainer().scrollTop > 100) {
+      buttonUp === null || buttonUp === void 0 ? void 0 : buttonUp.classList.remove("hidden");
+    } else {
+      buttonUp === null || buttonUp === void 0 ? void 0 : buttonUp.classList.add("hidden");
+    }
   });
+  buttonUp === null || buttonUp === void 0 ? void 0 : buttonUp.addEventListener('click', goToTop);
 }; // Homepage scripts
 
 
