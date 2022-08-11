@@ -1731,6 +1731,218 @@ strong em {
   color: #101010;
 }
 
+.login-section {
+  padding: 64px 0 80px;
+}
+
+.login-inner {
+  max-width: 478px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.login-inner__title {
+  margin-bottom: 40px;
+}
+
+.login-inner__title strong {
+  font-family: "Roboto";
+  font-weight: 400;
+  font-size: 2rem;
+  line-height: 2.375rem;
+  text-align: center;
+  text-transform: uppercase;
+  color: #101010;
+  display: block;
+}
+
+.login-inner-form form {
+  margin-bottom: 32px;
+}
+
+.login-inner-form label {
+  display: block;
+}
+
+.login-inner-form label:not(:last-of-type) {
+  margin-bottom: 12px;
+}
+
+.login-inner-form label p {
+  font-size: 1rem;
+  line-height: 1.188rem;
+  text-transform: uppercase;
+  color: #101010;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.login-inner-form label span {
+  font-size: 1rem;
+  line-height: 1.188rem;
+  text-transform: uppercase;
+  color: #d29235;
+}
+
+.login-inner-form .login-politics {
+  margin-bottom: 25px;
+}
+
+.login-inner-form .login-politics,
+.login-inner-form .login-rules {
+  padding-left: 32px;
+  position: relative;
+}
+
+.login-inner-form .login-politics input,
+.login-inner-form .login-rules input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  position: absolute;
+  top: 6px;
+  left: 24px;
+}
+
+.login-inner-form .login-politics input::after,
+.login-inner-form .login-rules input::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: -27px;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  height: 22px;
+  width: 22px;
+  border: 1px solid #101010;
+  background: transparent;
+}
+
+.login-inner-form .login-politics input::before,
+.login-inner-form .login-rules input::before {
+  content: url("data:image/svg+xml,%3Csvg width='15' height='13' viewBox='0 0 15 13' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 9L5 12L14 1' stroke='%23101010'/%3E%3C/svg%3E%0A");
+  position: absolute;
+  top: -6px;
+  left: -22px;
+  opacity: 0;
+}
+
+.login-inner-form .login-politics input:checked::before,
+.login-inner-form .login-rules input:checked::before {
+  opacity: 1;
+}
+
+.login-inner-form .login-politics p,
+.login-inner-form .login-rules p {
+  font-weight: 300;
+  font-size: 0.875rem;
+  line-height: 1rem;
+  color: #101010;
+  display: inline;
+  text-transform: initial;
+}
+
+.login-inner-form .login-politics p b,
+.login-inner-form .login-rules p b {
+  font-weight: 500;
+}
+
+.login-inner-form .buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-top: 36px;
+}
+
+.login-inner-form .buttons .btn-login {
+  font-weight: 500;
+  font-size: 1.125rem;
+  line-height: 1.313rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background-color: #101010;
+  text-align: center;
+  padding: 13px 5px;
+  max-width: 235px;
+  width: 100%;
+  color: #fff;
+}
+
+.login-inner-form .buttons a {
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.188rem;
+  text-transform: uppercase;
+  color: #101010;
+}
+
+.login-inner-form .continued-social .google {
+  margin-bottom: 8px;
+}
+
+.login-inner-form .continued-social a {
+  padding: 12px 5px;
+  border: 1px solid #101010;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.login-inner-form .continued-social a svg {
+  margin-right: 12px;
+}
+
+.login-inner-form .continued-social a span {
+  font-weight: 500;
+  font-size: 1.125rem;
+  line-height: 1.313rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #101010;
+}
+
+.login-inner-form .info {
+  margin-top: 32px;
+}
+
+.login-inner-form .info strong {
+  font-family: "Roboto";
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.188rem;
+  text-transform: uppercase;
+  color: #101010;
+  text-align: center;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.login-inner-form .info p {
+  font-weight: 300;
+  font-size: 1rem;
+  line-height: 1.188rem;
+  color: #101010;
+}
+
+.login-inner-form .info p a {
+  font-weight: 400;
+  color: #000000;
+}
+
 @media (max-width: 1200px) {
   .row {
     margin: 0;
@@ -2151,6 +2363,43 @@ strong em {
 
   .register-inner-form .continued-social a span {
     font-size: 1rem;
+  }
+
+  .login-section {
+    padding: 20px 0 40px;
+  }
+
+  .login-inner__title strong {
+    font-size: 1.5rem;
+    line-height: 1.75rem;
+  }
+
+  .login-inner-form .login-politics input,
+  .login-inner-form .login-rules input {
+    top: 13px;
+  }
+
+  .login-inner-form .login-politics p,
+  .login-inner-form .login-rules p {
+    font-size: 0.75rem;
+  }
+
+  .login-inner-form .buttons .btn-login {
+    max-width: 50%;
+    font-size: 1rem;
+  }
+
+  .login-inner-form .buttons a {
+    text-align: center;
+  }
+
+  .login-inner-form .continued-social a span {
+    font-size: 1rem;
+  }
+
+  .login-inner-form .info p {
+    font-size: 0.875rem;
+    line-height: 1rem;
   }
 }
 

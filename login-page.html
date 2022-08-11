@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="./css/style.css">
 </head>
 
-<body data-template="register-page">
+<body data-template="login-page">
   <header class="header">
     <div class="header-info">
       <div class="row">
@@ -23,7 +23,7 @@
             <div class="header-info__login">
               <a href="#" class="login link">Zaloguj się</a>
               <span>lub</span>
-              <a href="#" class="register link">Utwórz konto</a>
+              <a href="#" class="login link">Utwórz konto</a>
             </div>
           </div>
         </div>
@@ -160,23 +160,15 @@
       </div>
     </div>
   </header>
-  <section class="register-section">
+  <section class="login-section">
     <div class="row">
       <div class="container">
-        <div class="register-inner">
-          <div class="register-inner__title">
-            <strong>Zarejestruj się, używając swojego adresu e-mail</strong>
+        <div class="login-inner">
+          <div class="login-inner__title">
+            <strong>Masz już konto?</strong>
           </div>
-          <div class="register-inner-form">
-            <form action="#" id="register-form" onsubmit="return false" method="POST">
-              <label class="label-name">
-                <p><span>*</span> Imię</p>
-                <input type="text" name="name" class="input" placeholder="Imię">
-              </label>
-              <label class="label-last-name">
-                <p><span>*</span> Nazwisko</p>
-                <input type="text" name="lase-name" class="input" placeholder="Nazwisko">
-              </label>
+          <div class="login-inner-form">
+            <form action="#" id="login-form" onsubmit="return false" method="POST">
               <label class="label-email">
                 <p><span>*</span> E-mail</p>
                 <input type="email" name="email" class="input" placeholder="E-mail">
@@ -185,19 +177,10 @@
                 <p><span>*</span> Hasło</p>
                 <input type="password" name="password" class="input" placeholder="Hasło">
               </label>
-              <label class="label-password">
-                <p><span>*</span> Potwierdź hasło</p>
-                <input type="password" name="repeat-password" class="input" placeholder="Potwierdź hasło">
-              </label>
-              <label class="register-politics">
-                <input type="checkbox" required>
-                <p>Potwierdzam, że zapoznałem się z <b><a href="#" class="link">polityką prywatności</a></b> sklepu.</p>
-              </label>
-              <label class="register-rules">
-                <input type="checkbox" required>
-                <p>Potwierdzam, że zapoznałem się i akceptuję <b><a href="#" class="link">regulamin sklepu</a></b></p>
-              </label>
-              <button type="submit" class="btn-register">Utwórz konto</button>
+              <div class="buttons">
+                <button type="submit" class="btn-login">Zaloguj się</button>
+                <a href="#">Nie pamiętasz hasło?</a>
+              </div>
             </form>
             <div class="continued-social">
               <a href="#" class="google">
@@ -216,6 +199,10 @@
                 </svg>
                 <span>Kontynuuj z facebook</span>
               </a>
+            </div>
+            <div class="info">
+              <strong>Nie masz konta?</strong>
+              <p><a href="#" class="link">Tworzenie konta</a> ma wiele zalet: możesz ponawiać zamówienie, śledzić zamówienia i nie tylko.</p>
             </div>
           </div>
         </div>
