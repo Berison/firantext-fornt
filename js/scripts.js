@@ -1,5 +1,17 @@
 "use strict";
 
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
 // Default script
 var DefaultScript = function DefaultScript() {
   // Burger logic
@@ -44,7 +56,20 @@ var DefaultScript = function DefaultScript() {
       buttonUp === null || buttonUp === void 0 ? void 0 : buttonUp.classList.add("hidden");
     }
   });
-  buttonUp === null || buttonUp === void 0 ? void 0 : buttonUp.addEventListener('click', goToTop);
+  buttonUp === null || buttonUp === void 0 ? void 0 : buttonUp.addEventListener('click', goToTop); // Anchor
+
+  var allAnchor = document.querySelectorAll('.anchor');
+  allAnchor.forEach(function (anchor) {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      var element = document.querySelector(anchor.getAttribute('href'));
+      element.scrollIntoView({
+        block: 'start',
+        behavior: 'smooth',
+        inline: 'start'
+      });
+    });
+  });
 }; // Homepage scripts
 
 
@@ -91,6 +116,30 @@ var ProductPage = function ProductPage() {
     navigation: {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev'
+    },
+    breakpoints: {
+      320: {
+        slidesPerView: 3,
+        spaceBetween: 22,
+        loop: true,
+        direction: "horizontal"
+      },
+      768: {
+        slidesPerView: 3,
+        spaceBetween: 32,
+        loop: true,
+        direction: "horizontal"
+      },
+      1280: {
+        slidesPerView: 3,
+        spaceBetween: 32,
+        loop: true,
+        direction: "vertical",
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev'
+        }
+      }
     }
   });
   var swiperRadios = new Swiper(".option-radios-swiper", {
@@ -98,6 +147,47 @@ var ProductPage = function ProductPage() {
     spaceBetween: 32,
     scrollbar: {
       el: '.swiper-scrollbar'
+    },
+    breakpoints: {
+      320: {
+        slidesPerView: 2,
+        spaceBetween: 31,
+        scrollbar: {
+          el: '.swiper-scrollbar'
+        }
+      },
+      768: {
+        slidesPerView: 3,
+        spaceBetween: 31,
+        scrollbar: {
+          el: '.swiper-scrollbar'
+        }
+      },
+      1050: {
+        slidesPerView: 3,
+        spaceBetween: 32,
+        scrollbar: {
+          el: '.swiper-scrollbar'
+        }
+      }
+    }
+  });
+  var swiperRecomended = new Swiper(".swiper-recomended", {
+    slidesPerView: 4,
+    spaceBetween: 32,
+    breakpoints: {
+      320: {
+        slidesPerView: 2,
+        spaceBetween: 32
+      },
+      768: {
+        slidesPerView: 3,
+        spaceBetween: 32
+      },
+      1280: {
+        slidesPerView: 4,
+        spaceBetween: 32
+      }
     }
   }); // Plus minus logic
 
@@ -123,7 +213,74 @@ var ProductPage = function ProductPage() {
         imageInner.querySelector('img').setAttribute('src', srcSlide);
       });
     });
-  }, 0);
+  }, 0); // Add active select
+
+  var selectSpan = document.querySelectorAll('.option-input-inner_select .active-text');
+  selectSpan === null || selectSpan === void 0 ? void 0 : selectSpan.forEach(function (select) {
+    select.addEventListener('click', function () {
+      var parent = select.parentElement,
+          input = parent.querySelector('input'),
+          listItem = parent.querySelectorAll('.list p');
+      parent.classList.contains('active') ? parent.classList.remove('active') : parent.classList.add('active');
+      listItem.forEach(function (item) {
+        item.addEventListener('click', function () {
+          var value = item.textContent;
+          select.innerHTML = value;
+          input.value = value;
+          listItem.forEach(function (elem) {
+            return elem.classList.remove('active');
+          });
+          item.classList.add('active');
+          parent.classList.remove('active');
+        });
+      });
+    });
+  }); // Tabs
+
+  var tabsItemsHead = document.querySelectorAll('.product-page-tabs .product-page-tabs__head .item-head'),
+      tabsItemsInner = document.querySelectorAll('.product-page-tabs .product-page-tabs__inner .item-inner');
+  tabsItemsHead.forEach(function (item, index) {
+    item.addEventListener('click', function () {
+      if (window.innerWidth < 768) {
+        if (item.classList.contains('active')) {
+          tabsItemsHead.forEach(function (elem) {
+            return elem.style.display = 'block';
+          });
+        } else {
+          tabsItemsHead.forEach(function (elem) {
+            return elem.style.display = 'none';
+          });
+          item.style.display = 'block';
+        }
+      }
+
+      [].concat(_toConsumableArray(tabsItemsHead), _toConsumableArray(tabsItemsInner)).forEach(function (elem) {
+        return elem.classList.remove('active');
+      });
+      item.classList.add('active');
+      tabsItemsInner[index].classList.add('active');
+    });
+  }); // Dependence
+
+  var allInputRadio = document.querySelectorAll('.option-radio input'),
+      allDependenceInner = document.querySelectorAll('.option-dependence-inner');
+  allInputRadio.forEach(function (input) {
+    input.addEventListener('change', function () {
+      var currentInner = _toConsumableArray(allDependenceInner).filter(function (elem) {
+        var _elem$dataset, _input$dataset;
+
+        return ((_elem$dataset = elem.dataset) === null || _elem$dataset === void 0 ? void 0 : _elem$dataset.dependence) == ((_input$dataset = input.dataset) === null || _input$dataset === void 0 ? void 0 : _input$dataset.dependence);
+      });
+
+      if (currentInner.length > 0) {
+        currentInner[0].style.display = 'block';
+      } else if (currentInner.length == 0) {
+        allDependenceInner.forEach(function (elem) {
+          return elem.style.display = 'none';
+        });
+      }
+    });
+  });
 };
 
 document.addEventListener('DOMContentLoaded', function () {

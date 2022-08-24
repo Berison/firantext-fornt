@@ -236,17 +236,17 @@
               </div>
               <div class="option-radio">
                 <label>
-                  <input type="radio" name="material" data-info="tylko materiał">
+                  <input type="radio" name="material" data-info="tylko materiał" checked>
                   <span>tylko materiał</span>
                 </label>
               </div>
               <div class="option-radio">
                 <label>
-                  <input type="radio" name="material" data-info="z usługą szycia">
+                  <input type="radio" name="material" data-info="z usługą szycia" data-dependence="with-sewing-service">
                   <span>z usługą szycia</span>
                 </label>
               </div>
-              <div class="option-dependence-inner" data-dependence="with-sewing-service" >
+              <div class="option-dependence-inner" data-dependence="with-sewing-service" style="display: none;">
                 <div class="option-input">
                   <label>
                     <div class="option-input-info">
@@ -264,13 +264,13 @@
                       <input type="text" name="select" hidden>
                       <span class="active-text">Szyna sufitowa + żabki</span>
                       <div class="list">
-                        <p>Montaż w otworze okiennym</p>
-                        <p>Karnisz wkładany w taśme</p>
-                        <p>Karnisz wkładany w przelotki</p>
-                        <p>Montaż nad oknem</p>
-                        <p>Karnisz + żabki</p>
-                        <p class="active">Szyna sufitowa + żabki</p>
-                        <p>Szyna sufitowa + agrafki</p>
+                        <p data-id="2" class="popup-open">Montaż w otworze okiennym</p>
+                        <p data-id="3" class="popup-open">Karnisz wkładany w taśme</p>
+                        <p data-id="4" class="popup-open">Karnisz wkładany w przelotki</p>
+                        <p data-id="5" class="popup-open">Montaż nad oknem</p>
+                        <p data-id="1" class="popup-open">Karnisz + żabki</p>
+                        <p data-id="6" class="active popup-open">Szyna sufitowa + żabki</p>
+                        <p data-id="7" class="popup-open">Szyna sufitowa + agrafki</p>
                       </div>
                     </div>
                     <div class="option-input-inner">
@@ -282,14 +282,6 @@
                   <label>
                     <div class="option-input-info">
                       <p><span>* </span>Przelotki</p>
-                      <svg width="26" height="31" viewBox="0 0 26 31" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                          d="M24.617 7H1.38297C1.17147 7 1 7.17142 1 7.38297V30.617C1 30.8286 1.17147 31 1.38297 31C2.10311 31 2.48191 30.6632 2.78636 30.3926C3.05664 30.1523 3.25197 29.9787 3.68083 29.9787C4.10973 29.9787 4.30502 30.1523 4.5753 30.3926C4.8798 30.6632 5.25855 31 5.97873 31C6.69873 31 7.07767 30.6632 7.38208 30.3926C7.65241 30.1524 7.84778 29.9787 8.27659 29.9787C8.70541 29.9787 8.90073 30.1524 9.17111 30.3926C9.47556 30.6632 9.85441 31 10.5745 31C10.786 31 10.9574 30.8286 10.9574 30.617V12.8887C11.5939 13.1256 12.282 13.2553 13 13.2553C13.7179 13.2553 14.4061 13.1256 15.0425 12.8887V30.617C15.0425 30.8286 15.214 31 15.4255 31C16.1456 31 16.5244 30.6632 16.8288 30.3926C17.0991 30.1523 17.2945 29.9787 17.7233 29.9787C18.1522 29.9787 18.3475 30.1523 18.6178 30.3926C18.9222 30.6632 19.301 31 20.0212 31C20.7412 31 21.1201 30.6632 21.4245 30.3926C21.6948 30.1524 21.8902 29.9787 22.319 29.9787C22.7478 29.9787 22.9432 30.1524 23.2135 30.3926C23.5181 30.6632 23.897 31 24.617 31C24.8285 31 25 30.8286 25 30.617V7.38297C25 7.17142 24.8285 7 24.617 7ZM15.7817 7.76594C15.5942 9.13394 14.4187 10.1915 13 10.1915C11.5813 10.1915 10.4058 9.13394 10.2183 7.76594H15.7817ZM1.76594 7.76594H7.14044C7.17827 8.35061 7.30192 8.91227 7.49917 9.43834C7.13786 9.91263 6.58239 10.1915 5.97869 10.1915C5.13077 10.1915 4.37434 9.62284 4.13931 8.80867C4.08063 8.60547 3.86838 8.48847 3.66512 8.54692C3.46187 8.60561 3.34473 8.81791 3.40342 9.02111C3.73253 10.1612 4.79148 10.9575 5.97869 10.9575C6.69006 10.9575 7.35367 10.681 7.84769 10.1981C8.09669 10.6519 8.40377 11.0695 8.75908 11.4408C7.99066 12.119 7.01716 12.4894 5.97869 12.4894C3.65575 12.4894 1.76594 10.5995 1.76594 8.27664V7.76594ZM10.1915 30.1729C9.99714 30.1021 9.85413 29.975 9.67994 29.8202C9.43469 29.6022 9.14087 29.3416 8.65956 29.2483V13.9584C8.65956 13.7469 8.48809 13.5754 8.27659 13.5754C8.06509 13.5754 7.89362 13.7469 7.89362 13.9584V29.2483C7.41241 29.3415 7.1185 29.6021 6.87325 29.8202C6.60287 30.0604 6.4075 30.234 5.97873 30.234C5.54983 30.234 5.35455 30.0604 5.08427 29.8202C4.83906 29.6022 4.5452 29.3415 4.06384 29.2483V13.9584C4.06384 13.7469 3.89237 13.5754 3.68088 13.5754C3.46938 13.5754 3.29791 13.7469 3.29791 13.9584V29.2483C2.81659 29.3415 2.52269 29.6021 2.27748 29.8202C2.10334 29.9749 1.96037 30.1021 1.76598 30.1729V10.927C2.64855 12.3248 4.20695 13.2553 5.97873 13.2553C7.23409 13.2553 8.40977 12.7983 9.32716 11.9613C9.59688 12.1781 9.88591 12.3718 10.1915 12.539V30.1729H10.1915ZM13 12.4893C10.3132 12.4893 8.10447 10.4035 7.90797 7.76594H9.44631C9.63808 9.55741 11.1584 10.9574 13 10.9574C14.8416 10.9574 16.3619 9.55741 16.5537 7.76594H18.092C17.8955 10.4035 15.6868 12.4893 13 12.4893ZM24.2341 30.1729C24.0397 30.1021 23.8967 29.975 23.7225 29.8202C23.4773 29.6022 23.1835 29.3416 22.7021 29.2483V13.9584C22.7021 13.7469 22.5307 13.5754 22.3192 13.5754C22.1077 13.5754 21.9362 13.7469 21.9362 13.9584V29.2483C21.455 29.3415 21.1611 29.6021 20.9158 29.8202C20.6455 30.0604 20.4501 30.234 20.0213 30.234C19.5924 30.234 19.3971 30.0604 19.1268 29.8202C18.8816 29.6022 18.5878 29.3415 18.1064 29.2483V13.9584C18.1064 13.7469 17.935 13.5754 17.7235 13.5754C17.512 13.5754 17.3405 13.7469 17.3405 13.9584V29.2483C16.8592 29.3415 16.5653 29.6021 16.3201 29.8202C16.1459 29.9749 16.003 30.1021 15.8086 30.1729V12.5389C16.1142 12.3718 16.4032 12.178 16.6729 11.9612C17.5903 12.7982 18.766 13.2553 20.0214 13.2553C21.7932 13.2553 23.3515 12.3248 24.2341 10.9269V30.1729H24.2341ZM24.2341 8.27659C24.2341 10.5995 22.3442 12.4893 20.0213 12.4893C18.9829 12.4893 18.0093 12.119 17.2409 11.4407C17.5962 11.0695 17.9033 10.6519 18.1523 10.198C18.6463 10.681 19.3099 10.9574 20.0213 10.9574C21.2085 10.9574 22.2675 10.1612 22.5966 9.02106C22.6553 8.81786 22.5381 8.60556 22.3349 8.54688C22.1316 8.48837 21.9194 8.60537 21.8607 8.80862C21.6257 9.6228 20.8692 10.1914 20.0213 10.1914C19.4177 10.1914 18.8621 9.91258 18.5008 9.4383C18.698 8.91222 18.8217 8.35061 18.8596 7.76589H24.2341V8.27659Z"
-                          fill="#101010" />
-                        <path
-                          d="M0.787868 2.78787C0.670711 2.90503 0.670711 3.09497 0.787868 3.21213L2.69706 5.12132C2.81421 5.23848 3.00416 5.23848 3.12132 5.12132C3.23848 5.00416 3.23848 4.81421 3.12132 4.69706L1.42426 3L3.12132 1.30294C3.23848 1.18579 3.23848 0.995837 3.12132 0.87868C3.00416 0.761522 2.81421 0.761522 2.69706 0.87868L0.787868 2.78787ZM25.2121 3.21213C25.3293 3.09497 25.3293 2.90503 25.2121 2.78787L23.3029 0.87868C23.1858 0.761522 22.9958 0.761522 22.8787 0.87868C22.7615 0.995837 22.7615 1.18579 22.8787 1.30294L24.5757 3L22.8787 4.69706C22.7615 4.81421 22.7615 5.00416 22.8787 5.12132C22.9958 5.23848 23.1858 5.23848 23.3029 5.12132L25.2121 3.21213ZM1 3.3H25V2.7H1V3.3Z"
-                          fill="#101010" />
-                      </svg>
                     </div>
                     <div class="option-input-inner option-input-inner_select">
                       <input type="text" name="grommets" hidden>
@@ -313,48 +305,63 @@
                       <div class="swiper-wrapper">
                         <div class="swiper-slide">
                           <div class="swiper-slide__head">
-                            <input type="radio" name="material-slide" id="slide-1" data-info="F9Z - 2,5 cm SMOK regulowana x 2">
+                            <input type="radio" name="material-slide" id="slide-1"
+                              data-info="F9Z - 2,5 cm SMOK regulowana x 2">
                           </div>
-                          <label for="slide-1"><div class="swiper-slide__image">
-                            <img src="./image/catalog/radios-slide.jpg" alt="">
-                          </div>
-                          <div class="swiper-slide__title">F9Z - 2,5 cm SMOK regulowana x 2</div></label>
+                          <label for="slide-1">
+                            <div class="swiper-slide__image">
+                              <img src="./image/catalog/radios-slide.jpg" alt="">
+                            </div>
+                            <div class="swiper-slide__title">F9Z - 2,5 cm SMOK regulowana x 2</div>
+                          </label>
                         </div>
                         <div class="swiper-slide">
                           <div class="swiper-slide__head">
-                            <input type="radio" name="material-slide" id="slide-2" data-info="F9Z - 2,5 cm SMOK regulowana x 2">
+                            <input type="radio" name="material-slide" id="slide-2"
+                              data-info="F9Z - 2,5 cm SMOK regulowana x 2">
                           </div>
-                          <label for="slide-2"><div class="swiper-slide__image">
-                            <img src="./image/catalog/radios-slide.jpg" alt="">
-                          </div>
-                          <div class="swiper-slide__title">F9Z - 2,5 cm SMOK regulowana x 2</div></label>
+                          <label for="slide-2">
+                            <div class="swiper-slide__image">
+                              <img src="./image/catalog/radios-slide.jpg" alt="">
+                            </div>
+                            <div class="swiper-slide__title">F9Z - 2,5 cm SMOK regulowana x 2</div>
+                          </label>
                         </div>
                         <div class="swiper-slide">
                           <div class="swiper-slide__head">
-                            <input type="radio" name="material-slide" id="slide-3" data-info="F9Z - 2,5 cm SMOK regulowana x 2">
+                            <input type="radio" name="material-slide" id="slide-3"
+                              data-info="F9Z - 2,5 cm SMOK regulowana x 2">
                           </div>
-                          <label for="slide-3"><div class="swiper-slide__image">
-                            <img src="./image/catalog/radios-slide.jpg" alt="">
-                          </div>
-                          <div class="swiper-slide__title">F9Z - 2,5 cm SMOK regulowana x 2</div></label>
+                          <label for="slide-3">
+                            <div class="swiper-slide__image">
+                              <img src="./image/catalog/radios-slide.jpg" alt="">
+                            </div>
+                            <div class="swiper-slide__title">F9Z - 2,5 cm SMOK regulowana x 2</div>
+                          </label>
                         </div>
                         <div class="swiper-slide">
                           <div class="swiper-slide__head">
-                            <input type="radio" name="material-slide" id="slide-4" data-info="F9Z - 2,5 cm SMOK regulowana x 2">
+                            <input type="radio" name="material-slide" id="slide-4"
+                              data-info="F9Z - 2,5 cm SMOK regulowana x 2">
                           </div>
-                          <label for="slide-4"><div class="swiper-slide__image">
-                            <img src="./image/catalog/radios-slide.jpg" alt="">
-                          </div>
-                          <div class="swiper-slide__title">F9Z - 2,5 cm SMOK regulowana x 2</div></label>
+                          <label for="slide-4">
+                            <div class="swiper-slide__image">
+                              <img src="./image/catalog/radios-slide.jpg" alt="">
+                            </div>
+                            <div class="swiper-slide__title">F9Z - 2,5 cm SMOK regulowana x 2</div>
+                          </label>
                         </div>
                         <div class="swiper-slide">
                           <div class="swiper-slide__head">
-                            <input type="radio" name="material-slide" id="slide-5" data-info="F9Z - 2,5 cm SMOK regulowana x 2">
+                            <input type="radio" name="material-slide" id="slide-5"
+                              data-info="F9Z - 2,5 cm SMOK regulowana x 2">
                           </div>
-                          <label for="slide-5"><div class="swiper-slide__image">
-                            <img src="./image/catalog/radios-slide.jpg" alt="">
-                          </div>
-                          <div class="swiper-slide__title">F9Z - 2,5 cm SMOK regulowana x 2</div></label>
+                          <label for="slide-5">
+                            <div class="swiper-slide__image">
+                              <img src="./image/catalog/radios-slide.jpg" alt="">
+                            </div>
+                            <div class="swiper-slide__title">F9Z - 2,5 cm SMOK regulowana x 2</div>
+                          </label>
                         </div>
                       </div>
                       <div class="swiper-scrollbar"></div>
@@ -367,36 +374,203 @@
                     <span>Uszyć wypustkę</span>
                   </label>
                 </div>
-                <div class="option-product-count">
+              </div>
+              <div class="option-product-count">
+                <span>Ilość sztuk</span>
+                <div class="option-product-count__flex">
                   <button type="button" class="minus">
                     <svg width="10" height="2" viewBox="0 0 10 2" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M1 0.5H0.5V1.5H1V0.5ZM9 1.5H9.5V0.5H9V1.5ZM1 1.5H9V0.5H1V1.5Z" fill="#101010"/>
+                      <path d="M1 0.5H0.5V1.5H1V0.5ZM9 1.5H9.5V0.5H9V1.5ZM1 1.5H9V0.5H1V1.5Z" fill="#101010" />
                     </svg>
                   </button>
-                  <input type="number" class="count" value="1" data-min="0" data-max="999" oninput="(+this.value < 0) ? this.value = 0 : (+this.value > 999) ? this.value = 999 : null">
+                  <input type="number" class="count" value="1" data-min="0" data-max="999"
+                    oninput="(+this.value < 0) ? this.value = 0 : (+this.value > 999) ? this.value = 999 : null">
                   <button type="button" class="plus">
                     <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M5.5 1L5.5 0.5L4.5 0.5L4.5 1L5.5 1ZM4.5 9L4.5 9.5L5.5 9.5L5.5 9L4.5 9ZM4.5 1L4.5 9L5.5 9L5.5 1L4.5 1Z" fill="#101010"/>
-                      <path d="M1 4.5H0.5V5.5H1V4.5ZM9 5.5H9.5V4.5H9V5.5ZM1 5.5H9V4.5H1V5.5Z" fill="#101010"/>
-                    </svg>                      
+                      <path
+                        d="M5.5 1L5.5 0.5L4.5 0.5L4.5 1L5.5 1ZM4.5 9L4.5 9.5L5.5 9.5L5.5 9L4.5 9ZM4.5 1L4.5 9L5.5 9L5.5 1L4.5 1Z"
+                        fill="#101010" />
+                      <path d="M1 4.5H0.5V5.5H1V4.5ZM9 5.5H9.5V4.5H9V5.5ZM1 5.5H9V4.5H1V5.5Z" fill="#101010" />
+                    </svg>
                   </button>
                 </div>
-                <div class="price">
-                  <span>Cena</span>
-                  <strong>137, 50 zł</strong>
+              </div>
+              <div class="price">
+                <span>Cena</span>
+                <strong>137, 50 zł</strong>
+              </div>
+              <div class="buttons">
+                <div class="buttons__head">
+                  <button type="button" class="add-checkout">Dodaj do koszyka</button>
+                  <button type="button" class="add-favorite">
+                    <svg width="39" height="34" viewBox="0 0 39 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M33.9788 5.38261C30.5712 0.990558 23.7312 1.72714 21.3367 6.74399C20.5995 8.28877 18.4006 8.28877 17.6633 6.74399C15.2689 1.72714 8.42887 0.990564 5.02124 5.38262L4.41542 6.16345C1.50309 9.91712 1.92359 15.27 5.38632 18.5229L19.0019 31.3133C19.2506 31.5469 19.3862 31.6728 19.4911 31.7536C19.4942 31.756 19.4972 31.7583 19.5 31.7604C19.5028 31.7583 19.5058 31.756 19.5089 31.7536C19.6138 31.6728 19.7494 31.5469 19.9982 31.3133L33.6137 18.5229C37.0764 15.27 37.4969 9.91711 34.5846 6.16344L33.9788 5.38261ZM19.5694 5.90048C22.5916 -0.431741 31.225 -1.36144 35.526 4.18216L36.1318 4.96299C39.6634 9.51474 39.1535 16.0058 34.9545 19.9502L21.3118 32.7662C21.1009 32.9643 20.8944 33.1584 20.7039 33.3051C20.492 33.4683 20.2241 33.6348 19.8771 33.7029C19.6281 33.7518 19.3719 33.7518 19.1229 33.7029C18.7759 33.6348 18.508 33.4683 18.2962 33.3051C18.1057 33.1584 17.8991 32.9643 17.6883 32.7662L4.0455 19.9502C-0.153454 16.0058 -0.663359 9.51474 2.86817 4.963L3.47399 4.18216C7.77506 -1.36144 16.4084 -0.431742 19.4306 5.90048C19.4423 5.92494 19.4522 5.93111 19.4567 5.93382C19.4649 5.93875 19.4798 5.94424 19.5 5.94424C19.5202 5.94424 19.5351 5.93875 19.5433 5.93382C19.5478 5.93111 19.5577 5.92494 19.5694 5.90048Z"
+                        fill="#101010" />
+                    </svg>
+                  </button>
                 </div>
-                <div class="buttons">
-                  <div class="buttons__head">
-                    <button type="button" class="add-checkout">Dodaj do koszyka</button>
-                    <button type="button" class="add-favorite">
-                      <svg width="39" height="34" viewBox="0 0 39 34" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd" clip-rule="evenodd" d="M33.9788 5.38261C30.5712 0.990558 23.7312 1.72714 21.3367 6.74399C20.5995 8.28877 18.4006 8.28877 17.6633 6.74399C15.2689 1.72714 8.42887 0.990564 5.02124 5.38262L4.41542 6.16345C1.50309 9.91712 1.92359 15.27 5.38632 18.5229L19.0019 31.3133C19.2506 31.5469 19.3862 31.6728 19.4911 31.7536C19.4942 31.756 19.4972 31.7583 19.5 31.7604C19.5028 31.7583 19.5058 31.756 19.5089 31.7536C19.6138 31.6728 19.7494 31.5469 19.9982 31.3133L33.6137 18.5229C37.0764 15.27 37.4969 9.91711 34.5846 6.16344L33.9788 5.38261ZM19.5694 5.90048C22.5916 -0.431741 31.225 -1.36144 35.526 4.18216L36.1318 4.96299C39.6634 9.51474 39.1535 16.0058 34.9545 19.9502L21.3118 32.7662C21.1009 32.9643 20.8944 33.1584 20.7039 33.3051C20.492 33.4683 20.2241 33.6348 19.8771 33.7029C19.6281 33.7518 19.3719 33.7518 19.1229 33.7029C18.7759 33.6348 18.508 33.4683 18.2962 33.3051C18.1057 33.1584 17.8991 32.9643 17.6883 32.7662L4.0455 19.9502C-0.153454 16.0058 -0.663359 9.51474 2.86817 4.963L3.47399 4.18216C7.77506 -1.36144 16.4084 -0.431742 19.4306 5.90048C19.4423 5.92494 19.4522 5.93111 19.4567 5.93382C19.4649 5.93875 19.4798 5.94424 19.5 5.94424C19.5202 5.94424 19.5351 5.93875 19.5433 5.93382C19.5478 5.93111 19.5577 5.92494 19.5694 5.90048Z" fill="#101010"/>
+                <div class="buttons__bottom">
+                  <button type="button" class="add-sample">Zamów próbkę</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container">
+          <div class="product-page-tabs">
+            <div class="product-page-tabs__head">
+              <div class="item-head active">Jak zamówić produkt pod wymiar?</div>
+              <div class="item-head">Realizacja</div>
+              <div class="item-head">Szczegóły</div>
+              <div class="item-head">Opis</div>
+              <div class="item-head">Wskazówki</div>
+            </div>
+            <div class="product-page-tabs__inner">
+              <div class="item-inner active">
+                <ul>
+                  <li>1. Podaj ilość materiału (szerokość)</li>
+                  <li>2. Wybież opcje zawieszania </li>
+                  <li>3. Podaj wysokość</li>
+                  <li>4. Wybież wzór taśmy/przelotek</li>
+                  <li>5. Podaj ilość sztuk</li>
+                </ul>
+              </div>
+              <div class="item-inner">
+                Przybliżony czas realizacji: od 3 do 14 dni roboczych + wysyłka <br><br>
+                <a href="#form-section" class="link anchor">Nie odpowiada termin?</a>
+              </div>
+              <div class="item-inner">
+                Kod produktu: xxx
+                Nazwa produktu: yyyy
+                Uwaga: produkt szyty/cięty na wymiar nie podlega zwrotowi.
+              </div>
+              <div class="item-inner">
+                <ul>
+                  <li>- cena: 35zł/mb</li>
+                  <li>- kolor: biel</li>
+                  <li>- wysokość maksymalna: 280 cm ( do regulacji )</li>
+                  <li>- szerokość: dowolna ( na metry )</li>
+                  <li>- przejrzystość: delikatna</li>
+                  <li>- typ: matowa</li>
+                </ul>
+              </div>
+              <div class="item-inner">
+                <ul>
+                  <li>- Cena dotyczy 1 metra bieżącego firany</li>
+                  <li>- Przy delikatnym praniu, nie wymaga prasowania (Perfekcyjnie złożona do prania i „na mokro”
+                    zawieszona firanka nie wymaga prasowania, pod warunkiem że prana w 30º i wirowana w trybie max
+                    400-600 obrotów)</li>
+                  <li>- Materiały polecamy marszczyć x2,5 Przykład: jeśli mamy karnisz/szynę 320cm to liczymy w
+                    następujący sposób 320 x 2,5 = 800cm.</li>
+                  <li>- Produkty wykonywane z tkanin uwzględniają margines błędu w granicach +/- 3 cm po wysokości i +/-
+                    20 cm po szerokości, co jest wynikiem właściwości materiału.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container">
+          <div class="product-page-recomended">
+            <div class="title">
+              <strong>Produkty powiązane</strong>
+            </div>
+            <div class="swiper swiper-recomended">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <div class="alert">Szyta na wymiar</div>
+                  <div class="favorite">
+                    <button type="button">
+                      <svg width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                          d="M17.3922 2.83372C15.6521 0.59097 12.1593 0.967096 10.9367 3.52889C10.5602 4.31772 9.43734 4.31772 9.06085 3.52889C7.83817 0.967097 4.34541 0.590973 2.60534 2.83372L2.29599 3.23245C0.808841 5.14921 1.02357 7.88262 2.79177 9.54366L9.74438 16.0749C9.87139 16.1942 9.94065 16.2585 9.99422 16.2998C9.9958 16.301 9.99731 16.3021 9.99876 16.3032C10.0002 16.3021 10.0017 16.301 10.0033 16.2998C10.0569 16.2585 10.1261 16.1942 10.2531 16.0749L17.2057 9.54366C18.9739 7.88262 19.1887 5.14921 17.7015 3.23244L17.3922 2.83372ZM10.0342 3.09816C11.5774 -0.13531 15.986 -0.610053 18.1823 2.22072L18.4916 2.61945C20.2949 4.94374 20.0346 8.25831 17.8904 10.2725L10.9239 16.8168C10.8162 16.918 10.7108 17.0171 10.6135 17.092C10.5053 17.1753 10.3685 17.2604 10.1913 17.2951C10.0642 17.3201 9.93336 17.3201 9.80619 17.2951C9.62902 17.2604 9.49219 17.1753 9.38403 17.092C9.28675 17.0171 9.18129 16.918 9.07363 16.8168L2.10709 10.2725C-0.0370529 8.25831 -0.29743 4.94375 1.5059 2.61945L1.81526 2.22073C4.01155 -0.610048 8.42008 -0.135311 9.96333 3.09817C9.96929 3.11066 9.97435 3.11381 9.97665 3.11519C9.98083 3.1177 9.98845 3.12051 9.99876 3.12051C10.0091 3.12051 10.0167 3.1177 10.0209 3.11519C10.0232 3.11381 10.0282 3.11066 10.0342 3.09816Z"
+                          fill="#101010" />
                       </svg>
                     </button>
                   </div>
-                  <div class="buttons__bottom">
-                    <button type="button" class="add-sample">Zamów próbkę</button>
+                  <a href="#">
+                    <div class="image"><img src="./image/catalog/product-preview.jpg" alt="Product"></div>
+                    <div class="info">
+                      <p class="title">FIRANA MARKIZETA NATURAL</p>
+                      <span class="price">19,90 zł</span>
+                    </div>
+                  </a>
+                </div>
+                <div class="swiper-slide">
+                  <div class="alert">Szyta na wymiar</div>
+                  <div class="favorite">
+                    <button type="button">
+                      <svg width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                          d="M17.3922 2.83372C15.6521 0.59097 12.1593 0.967096 10.9367 3.52889C10.5602 4.31772 9.43734 4.31772 9.06085 3.52889C7.83817 0.967097 4.34541 0.590973 2.60534 2.83372L2.29599 3.23245C0.808841 5.14921 1.02357 7.88262 2.79177 9.54366L9.74438 16.0749C9.87139 16.1942 9.94065 16.2585 9.99422 16.2998C9.9958 16.301 9.99731 16.3021 9.99876 16.3032C10.0002 16.3021 10.0017 16.301 10.0033 16.2998C10.0569 16.2585 10.1261 16.1942 10.2531 16.0749L17.2057 9.54366C18.9739 7.88262 19.1887 5.14921 17.7015 3.23244L17.3922 2.83372ZM10.0342 3.09816C11.5774 -0.13531 15.986 -0.610053 18.1823 2.22072L18.4916 2.61945C20.2949 4.94374 20.0346 8.25831 17.8904 10.2725L10.9239 16.8168C10.8162 16.918 10.7108 17.0171 10.6135 17.092C10.5053 17.1753 10.3685 17.2604 10.1913 17.2951C10.0642 17.3201 9.93336 17.3201 9.80619 17.2951C9.62902 17.2604 9.49219 17.1753 9.38403 17.092C9.28675 17.0171 9.18129 16.918 9.07363 16.8168L2.10709 10.2725C-0.0370529 8.25831 -0.29743 4.94375 1.5059 2.61945L1.81526 2.22073C4.01155 -0.610048 8.42008 -0.135311 9.96333 3.09817C9.96929 3.11066 9.97435 3.11381 9.97665 3.11519C9.98083 3.1177 9.98845 3.12051 9.99876 3.12051C10.0091 3.12051 10.0167 3.1177 10.0209 3.11519C10.0232 3.11381 10.0282 3.11066 10.0342 3.09816Z"
+                          fill="#101010" />
+                      </svg>
+                    </button>
                   </div>
+                  <a href="#">
+                    <div class="image"><img src="./image/catalog/product-preview.jpg" alt="Product"></div>
+                    <div class="info">
+                      <p class="title">FIRANA MARKIZETA NATURAL</p>
+                      <span class="price">19,90 zł</span>
+                    </div>
+                  </a>
+                </div>
+                <div class="swiper-slide">
+                  <div class="alert">Szyta na wymiar</div>
+                  <div class="favorite">
+                    <button type="button">
+                      <svg width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                          d="M17.3922 2.83372C15.6521 0.59097 12.1593 0.967096 10.9367 3.52889C10.5602 4.31772 9.43734 4.31772 9.06085 3.52889C7.83817 0.967097 4.34541 0.590973 2.60534 2.83372L2.29599 3.23245C0.808841 5.14921 1.02357 7.88262 2.79177 9.54366L9.74438 16.0749C9.87139 16.1942 9.94065 16.2585 9.99422 16.2998C9.9958 16.301 9.99731 16.3021 9.99876 16.3032C10.0002 16.3021 10.0017 16.301 10.0033 16.2998C10.0569 16.2585 10.1261 16.1942 10.2531 16.0749L17.2057 9.54366C18.9739 7.88262 19.1887 5.14921 17.7015 3.23244L17.3922 2.83372ZM10.0342 3.09816C11.5774 -0.13531 15.986 -0.610053 18.1823 2.22072L18.4916 2.61945C20.2949 4.94374 20.0346 8.25831 17.8904 10.2725L10.9239 16.8168C10.8162 16.918 10.7108 17.0171 10.6135 17.092C10.5053 17.1753 10.3685 17.2604 10.1913 17.2951C10.0642 17.3201 9.93336 17.3201 9.80619 17.2951C9.62902 17.2604 9.49219 17.1753 9.38403 17.092C9.28675 17.0171 9.18129 16.918 9.07363 16.8168L2.10709 10.2725C-0.0370529 8.25831 -0.29743 4.94375 1.5059 2.61945L1.81526 2.22073C4.01155 -0.610048 8.42008 -0.135311 9.96333 3.09817C9.96929 3.11066 9.97435 3.11381 9.97665 3.11519C9.98083 3.1177 9.98845 3.12051 9.99876 3.12051C10.0091 3.12051 10.0167 3.1177 10.0209 3.11519C10.0232 3.11381 10.0282 3.11066 10.0342 3.09816Z"
+                          fill="#101010" />
+                      </svg>
+                    </button>
+                  </div>
+                  <a href="#">
+                    <div class="image"><img src="./image/catalog/product-preview.jpg" alt="Product"></div>
+                    <div class="info">
+                      <p class="title">FIRANA MARKIZETA NATURAL</p>
+                      <span class="price">19,90 zł</span>
+                    </div>
+                  </a>
+                </div>
+                <div class="swiper-slide">
+                  <div class="alert">Szyta na wymiar</div>
+                  <div class="favorite">
+                    <button type="button">
+                      <svg width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                          d="M17.3922 2.83372C15.6521 0.59097 12.1593 0.967096 10.9367 3.52889C10.5602 4.31772 9.43734 4.31772 9.06085 3.52889C7.83817 0.967097 4.34541 0.590973 2.60534 2.83372L2.29599 3.23245C0.808841 5.14921 1.02357 7.88262 2.79177 9.54366L9.74438 16.0749C9.87139 16.1942 9.94065 16.2585 9.99422 16.2998C9.9958 16.301 9.99731 16.3021 9.99876 16.3032C10.0002 16.3021 10.0017 16.301 10.0033 16.2998C10.0569 16.2585 10.1261 16.1942 10.2531 16.0749L17.2057 9.54366C18.9739 7.88262 19.1887 5.14921 17.7015 3.23244L17.3922 2.83372ZM10.0342 3.09816C11.5774 -0.13531 15.986 -0.610053 18.1823 2.22072L18.4916 2.61945C20.2949 4.94374 20.0346 8.25831 17.8904 10.2725L10.9239 16.8168C10.8162 16.918 10.7108 17.0171 10.6135 17.092C10.5053 17.1753 10.3685 17.2604 10.1913 17.2951C10.0642 17.3201 9.93336 17.3201 9.80619 17.2951C9.62902 17.2604 9.49219 17.1753 9.38403 17.092C9.28675 17.0171 9.18129 16.918 9.07363 16.8168L2.10709 10.2725C-0.0370529 8.25831 -0.29743 4.94375 1.5059 2.61945L1.81526 2.22073C4.01155 -0.610048 8.42008 -0.135311 9.96333 3.09817C9.96929 3.11066 9.97435 3.11381 9.97665 3.11519C9.98083 3.1177 9.98845 3.12051 9.99876 3.12051C10.0091 3.12051 10.0167 3.1177 10.0209 3.11519C10.0232 3.11381 10.0282 3.11066 10.0342 3.09816Z"
+                          fill="#101010" />
+                      </svg>
+                    </button>
+                  </div>
+                  <a href="#">
+                    <div class="image"><img src="./image/catalog/product-preview.jpg" alt="Product"></div>
+                    <div class="info">
+                      <p class="title">FIRANA MARKIZETA NATURAL</p>
+                      <span class="price">19,90 zł</span>
+                    </div>
+                  </a>
+                </div>
+                <div class="swiper-slide">
+                  <div class="alert">Szyta na wymiar</div>
+                  <div class="favorite">
+                    <button type="button">
+                      <svg width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                          d="M17.3922 2.83372C15.6521 0.59097 12.1593 0.967096 10.9367 3.52889C10.5602 4.31772 9.43734 4.31772 9.06085 3.52889C7.83817 0.967097 4.34541 0.590973 2.60534 2.83372L2.29599 3.23245C0.808841 5.14921 1.02357 7.88262 2.79177 9.54366L9.74438 16.0749C9.87139 16.1942 9.94065 16.2585 9.99422 16.2998C9.9958 16.301 9.99731 16.3021 9.99876 16.3032C10.0002 16.3021 10.0017 16.301 10.0033 16.2998C10.0569 16.2585 10.1261 16.1942 10.2531 16.0749L17.2057 9.54366C18.9739 7.88262 19.1887 5.14921 17.7015 3.23244L17.3922 2.83372ZM10.0342 3.09816C11.5774 -0.13531 15.986 -0.610053 18.1823 2.22072L18.4916 2.61945C20.2949 4.94374 20.0346 8.25831 17.8904 10.2725L10.9239 16.8168C10.8162 16.918 10.7108 17.0171 10.6135 17.092C10.5053 17.1753 10.3685 17.2604 10.1913 17.2951C10.0642 17.3201 9.93336 17.3201 9.80619 17.2951C9.62902 17.2604 9.49219 17.1753 9.38403 17.092C9.28675 17.0171 9.18129 16.918 9.07363 16.8168L2.10709 10.2725C-0.0370529 8.25831 -0.29743 4.94375 1.5059 2.61945L1.81526 2.22073C4.01155 -0.610048 8.42008 -0.135311 9.96333 3.09817C9.96929 3.11066 9.97435 3.11381 9.97665 3.11519C9.98083 3.1177 9.98845 3.12051 9.99876 3.12051C10.0091 3.12051 10.0167 3.1177 10.0209 3.11519C10.0232 3.11381 10.0282 3.11066 10.0342 3.09816Z"
+                          fill="#101010" />
+                      </svg>
+                    </button>
+                  </div>
+                  <a href="#">
+                    <div class="image"><img src="./image/catalog/product-preview.jpg" alt="Product"></div>
+                    <div class="info">
+                      <p class="title">FIRANA MARKIZETA NATURAL</p>
+                      <span class="price">19,90 zł</span>
+                    </div>
+                  </a>
                 </div>
               </div>
             </div>
@@ -405,7 +579,127 @@
       </div>
     </div>
   </div>
-  <section class="form-section">
+  <div class="overlay"></div>
+  <div class="popup-info">
+    <div class="close">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M18 6L6 18" stroke="#101010" stroke-linecap="square" stroke-linejoin="round"/>
+        <path d="M6 6L18 18" stroke="#101010" stroke-linecap="square" stroke-linejoin="round"/>
+      </svg>
+    </div>
+    <div class="popup-info__head">
+      <strong>Karnisz + żabki</strong>
+      <p>Podaj wymiar wysokości na gotowo</p>
+    </div>
+    <div class="popup-info__inner">
+      <div class="popup-info__inner__left">
+        <img src="image/catalog/popup_info/Curtain_rod_+_frogs.svg" alt="">
+      </div>
+      <div class="popup-info__inner__right">
+        <p>Wepnij metrówkę w żabkę (tak jak będzie wpięto firany/zasłony) i zmierz wysokość do podłogi. Następnie odlicz odstęp od podłogi (standardowo 2-5 cm).</p>
+      </div>
+    </div>
+    <div class="button">
+      <button type="button" class="btn-close">Rozumiem</button>
+    </div>
+  </div>
+  <script>
+    // Logic for popups
+    const popupsInfo = [
+      {
+        id: 1,
+        title: 'Karnisz + żabki',
+        subTitle: 'Podaj wymiar wysokości na gotowo',
+        text: 'Wepnij metrówkę w żabkę (tak jak będzie wpięto firany/zasłony) i zmierz wysokość do podłogi. Następnie odlicz odstęp od podłogi (standardowo 2-5 cm).',
+        srcImage: './image/catalog/popup_info/Curtain_rod_+_frogs.svg'
+      },
+      {
+        id: 2,
+        title: 'Montaż w otworze okiennym',
+        subTitle: '',
+        text: 'Przyłóż metrowkę do górnej części otworu okiennego i zmierz wysokość (w dół) do parapetu. To będzie maksymalna wysokość rozłożonej rolety.',
+        srcImage: './image/catalog/popup_info/Installation_in_a_window_opening.svg'
+      },
+      {
+        id: 3,
+        title: 'Karnisz wkładany w taśme',
+        subTitle: 'Podaj wymiar wysokości na gotowo',
+        text: 'Wepnij metrówkę w żabkę (tak jak będzie wpięto firany/zasłony) i zmierz wysokość do podłogi. Następnie odlicz odstęp od podłogi (standardowo 2-5 cm).',
+        srcImage: './image/catalog/popup_info/Curtain_inserted_w_tasme.svg'
+      },
+      {
+        id: 4,
+        title: 'Karnisz wkładany w przelotki',
+        subTitle: 'Podaj wymiar wysokości na gotowo',
+        text: 'Wepnij metrówkę w żabkę (tak jak będzie wpięto firany/zasłony) i zmierz wysokość do podłogi. Następnie odlicz odstęp od podłogi (standardowo 2-5 cm).',
+        srcImage: './image/catalog/popup_info/Curtain_rod_inserted_w_the_guides.svg'
+      },
+      {
+        id: 5,
+        title: 'Montaż nad oknem',
+        subTitle: '',
+        text: 'Przyłóż metrowkę do sufitu i zmierz wysokość (w dół) do punktu w którym powinna się kończyć na max rozłożona roleta. Standardowo około 10cm poniżej parapetu.',
+        srcImage: './image/catalog/popup_info/Mounting_Above_the_Window.svg'
+      },
+      {
+        id: 6,
+        title: 'Szyna sufitowa + żabki',
+        subTitle: 'Podaj wymiar wysokości na gotowo',
+        text: 'Wepnij metrówkę w żabkę (tak jak będzie wpięto firany/zasłony) i zmierz wysokość do podłogi. Następnie odlicz odstęp od podłogi (standardowo 2-5 cm).',
+        srcImage: './image/catalog/popup_info/Ceiling_rail_+_frogs.svg'
+      },
+      {
+        id: 7,
+        title: 'Szyna sufitowa + agrafki',
+        subTitle: 'Podaj wymiar wysokości na gotowo',
+        text: 'Zmierz wysokość od szyny sufitowej do podłogi. Następnie odlicz odstęp od podłogi (standardowo 2-5 cm).',
+        srcImage: './image/catalog/popup_info/Ceiling_rail_+_safety_pins.svg'
+      }
+    ];
+
+    const openPopupButtons = document.querySelectorAll('.option-input-inner_select .list .popup-open'),
+      popupInner = document.querySelector('.popup-info'),
+      closePopupBtn = document.querySelector('.popup-info .close'),
+      overlay = document.querySelector('.overlay'),
+      closeRozumem = document.querySelector('.popup-info .btn-close');
+
+    const closePopup = () => {
+      popupInner.classList.remove('active');
+      overlay.classList.remove('active');
+    }
+
+    const openPopup = () => {
+      popupInner.classList.add('active');
+      overlay.classList.add('active');
+    }
+
+    openPopupButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        if(button.dataset.id) {
+          let popupTitle = popupInner.querySelector('.popup-info__head strong'),
+            popupSubText = popupInner.querySelector('.popup-info__head p'),
+            popupImage = popupInner.querySelector('.popup-info__inner__left img'),
+            popupText = popupInner.querySelector('.popup-info__inner__right p');
+
+          let currentInfo = popupsInfo.filter(elem => elem.id == button.dataset.id)[0];
+
+          if(currentInfo) {
+            popupTitle.innerHTML = currentInfo.title;
+            popupSubText.innerHTML = currentInfo.subTitle;
+            popupImage.src = currentInfo.srcImage;
+            popupText.src = currentInfo.text;
+          }
+          
+          openPopup();
+        }
+      })
+    });
+
+    closePopupBtn.addEventListener('click', closePopup);
+    overlay.addEventListener('click', closePopup);
+    closeRozumem.addEventListener('click', closePopup);
+  </script>
+  <section class="form-section" id="form-section">
     <div class="row">
       <div class="container">
         <div class="form-inner">
