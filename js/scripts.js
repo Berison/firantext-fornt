@@ -69,6 +69,17 @@ var DefaultScript = function DefaultScript() {
         inline: 'start'
       });
     });
+  }); // Shopping cart
+
+  var cartButton = document.querySelector('.header-main__list .checkout'),
+      cartMini = document.querySelector('.cart-mini-inner'),
+      cartMiniClose = document.querySelector('.cart-mini-inner .close');
+  cartButton === null || cartButton === void 0 ? void 0 : cartButton.addEventListener('click', function (e) {
+    e.preventDefault();
+    cartMini.classList.contains('active') ? cartMini.classList.remove('active') : cartMini.classList.add('active');
+  });
+  cartMiniClose === null || cartMiniClose === void 0 ? void 0 : cartMiniClose.addEventListener('click', function () {
+    return cartMini.classList.remove('active');
   });
 }; // Homepage scripts
 
@@ -191,17 +202,21 @@ var ProductPage = function ProductPage() {
     }
   }); // Plus minus logic
 
-  var btnPlus = document.querySelector('.option-product-count .plus'),
-      btnMinus = document.querySelector('.option-product-count .minus');
-  btnPlus === null || btnPlus === void 0 ? void 0 : btnPlus.addEventListener('click', function () {
-    var input = btnPlus.parentElement.querySelector('input'),
-        max = +input.dataset.max;
-    if (input.value < max) input.value = +input.value + 1;
+  var btnPlus = document.querySelectorAll('.product-count .plus'),
+      btnMinus = document.querySelectorAll('.product-count .minus');
+  btnPlus.forEach(function (button) {
+    button === null || button === void 0 ? void 0 : button.addEventListener('click', function () {
+      var input = button.parentElement.querySelector('input'),
+          max = +input.dataset.max;
+      if (input.value < max) input.value = +input.value + 1;
+    });
   });
-  btnMinus === null || btnMinus === void 0 ? void 0 : btnMinus.addEventListener('click', function () {
-    var input = btnPlus.parentElement.querySelector('input'),
-        min = +input.dataset.min;
-    if (input.value > min) input.value = +input.value - 1;
+  btnMinus.forEach(function (button) {
+    button === null || button === void 0 ? void 0 : button.addEventListener('click', function () {
+      var input = button.parentElement.querySelector('input'),
+          min = +input.dataset.min;
+      if (input.value > min) input.value = +input.value - 1;
+    });
   });
   setTimeout(function () {
     // All slides
