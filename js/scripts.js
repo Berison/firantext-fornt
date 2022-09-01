@@ -296,6 +296,46 @@ var ProductPage = function ProductPage() {
       }
     });
   });
+}; // Account page
+
+
+var AccountPage = function AccountPage() {
+  var tabs = document.querySelectorAll('.account-inner-tabs .account-inner-tabs__item'),
+      tabsInners = document.querySelectorAll('.account-inner .account-inner-content');
+  tabs.forEach(function (tab) {
+    tab.addEventListener('click', function () {
+      if (tab.classList.contains('active')) {
+        if (window.outerWidth < 576) {
+          tabs.forEach(function (tab) {
+            return tab.style.display = 'block';
+          });
+          tabs.forEach(function (tab) {
+            return tab.classList.remove('active');
+          });
+        }
+      } else {
+        var currentInner = _toConsumableArray(tabsInners).filter(function (tabInner) {
+          return tabInner.dataset.tabContent == tab.dataset.tab;
+        })[0];
+
+        tabsInners.forEach(function (tabInner) {
+          return tabInner.style.display = 'none';
+        });
+        currentInner ? currentInner.style.display = 'block' : null;
+        tabs.forEach(function (tab) {
+          return tab.classList.remove('active');
+        });
+        tab.classList.add('active');
+
+        if (window.outerWidth < 576) {
+          tabs.forEach(function (tab) {
+            return tab.style.display = 'none';
+          });
+          tab.style.display = 'block';
+        }
+      }
+    });
+  });
 };
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -310,6 +350,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
     case 'product-page':
       ProductPage();
+      break;
+
+    case 'account-page':
+      AccountPage();
       break;
   }
 
