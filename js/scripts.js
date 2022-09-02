@@ -336,6 +336,21 @@ var AccountPage = function AccountPage() {
       }
     });
   });
+}; // Faq page
+
+
+var FaqPage = function FaqPage() {
+  var accordionButtons = document.querySelectorAll('.accordion .accordion-item .plus'),
+      accordionItems = document.querySelectorAll('.accordion .accordion-item');
+  accordionButtons.forEach(function (button, index) {
+    button.addEventListener('click', function () {
+      var accordionItem = accordionItems[index];
+      accordionItems.forEach(function (item) {
+        return item.classList.remove('active');
+      });
+      accordionItem.classList.add('active');
+    });
+  });
 };
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -354,6 +369,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
     case 'account-page':
       AccountPage();
+      break;
+
+    case 'faq-page':
+      FaqPage();
       break;
   }
 
