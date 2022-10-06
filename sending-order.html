@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="./css/style.css">
 </head>
 
-<body data-template="account-page">
+<body data-template="sending-order-page">
 <header class="header">
   <div class="header-info">
     <div class="row">
@@ -169,271 +169,202 @@
     </div>
   </div>
 </header>
-<div class="account-page">
+<div class="sending-order-page">
   <div class="container">
     <div class="row">
-      <div class="account-inner">
-        <div class="account-inner-tabs">
-          <div class="account-inner-tabs__item active" data-tab="my-account">Moje konto</div>
-          <div class="account-inner-tabs__item" data-tab="my-orders">Moje zamówienia</div>
-          <div class="account-inner-tabs__item" data-tab="favorite">Ulubione</div>
-          <div class="account-inner-tabs__item" data-tab="my-addresses">Moje adresy</div>
+      <div class="sending-order-inner">
+        <div class="sending-order-inner__head">
+          <div class="title"><strong>Złóż zamówienie</strong></div>
+          <div class="sending-order-inner__tabs">
+            <div class="sending-order-inner__tab active" data-tab="new-client">Nowy klient</div>
+            <div class="sending-order-inner__tab" data-tab="have-account">Posiadam już konto</div>
+          </div>
         </div>
-        <div class="account-inner-content" data-tab-content="my-account">
-          <form action="#" onsubmit="return false" class="my-account">
-            <div class="inner-inputs">
-              <div class="input-info input-name">
-                <label for="my-account-name">Imię</label>
-                <input type="text" name="name" id="my-account-name" placeholder="Imię">
+        <div class="sending-order-inner__content">
+          <div class="account-login">
+            <form action="#" id="login-form" onsubmit="return false" method="POST">
+              <label class="label-email">
+                <p><span>*</span> E-mail</p>
+                <input type="email" name="email" class="input" placeholder="E-mail">
+              </label>
+              <label class="label-password">
+                <p><span>*</span> Hasło</p>
+                <input type="password" name="password" class="input" placeholder="Hasło">
+              </label>
+              <div class="buttons">
+                <button type="submit" class="btn-login">Zaloguj się</button>
+                <a href="#">Nie pamiętasz hasło?</a>
               </div>
-              <div class="input-info input-mail">
-                <label for="my-account-email">E-mail</label>
-                <input type="email" name="email" id="my-account-email" placeholder="E-mail">
+            </form>
+          </div>
+          <div class="title">
+            <strong>Adres dostawy</strong>
+          </div>
+          <div class="my-addresses-inputs">
+            <div class="my-addresses-inputs__item">
+              <label for="name">Imię</label>
+              <input type="text" id="name" name="name" placeholder="Imię">
+            </div>
+            <div class="my-addresses-inputs__item">
+              <label for="voivodeship">Województwo</label>
+              <input type="text" id="voivodeship" name="voivodeship" placeholder="Województwo">
+            </div>
+            <div class="my-addresses-inputs__item">
+              <label for="street-and-house-number"><span>*</span> Ulica i numer domu</label>
+              <input type="text" id="street-and-house-number" name="street-and-house-number" placeholder="Ulica i numer domu">
+            </div>
+            <div class="my-addresses-inputs__item">
+              <label for="city"><span>*</span> Miejscowość</label>
+              <input type="text" id="city" name="city" placeholder="Miejscowość">
+            </div>
+            <div class="my-addresses-inputs__item">
+              <label for="last-name"><span>*</span> Nazwisko</label>
+              <input type="text" id="last-name" name="last-name" placeholder="Nazwisko">
+            </div>
+            <div class="my-addresses-inputs__item">
+              <label for="zip-code"><span>*</span> Kod pocztowy</label>
+              <input type="text" id="zip-code" name="zip-code" placeholder="Kod pocztowy">
+            </div>
+            <div class="my-addresses-inputs__item">
+              <label for="phone"><span>*</span> Numer telefonu</label>
+              <input type="text" id="phone" name="phone" placeholder="Numer telefonu">
+            </div>
+          </div>
+          <div class="title">
+            <strong>Potrzebujesz faktury do zamówienia?</strong>
+          </div>
+          <div class="content">
+            <div class="input-inner">
+              <input type="checkbox" name="you-need-invoice-for-your-order" id="you-need-invoice-for-your-order" checked>
+              <label for="you-need-invoice-for-your-order">Chcę otrzymać fakturę</label>
+            </div>
+          </div>
+          <div class="content-row">
+            <div class="content">
+              <div class="title">
+                <strong>Sposób wysyłki</strong>
               </div>
-              <div class="input-info input-last-name">
-                <label for="my-account-last-name">Nazwisko</label>
-                <input type="text" name="last-name" id="my-account-last-name" placeholder="Nazwisko">
+              <div class="input-inner">
+                <input type="radio" name="delivery" id="delivery-1">
+                <label for="delivery-1"><span>0, 00 zł</span>Dostawa 1</label>
               </div>
-              <div class="input-info input-password">
-                <label for="my-account-password">Hasło</label>
-                <input type="text" name="last-name" id="my-account-password" placeholder="Hasło">
+              <div class="input-inner">
+                <input type="radio" name="delivery" id="delivery-2">
+                <label for="delivery-2"><span>0, 00 zł</span>Dostawa 2</label>
+              </div>
+              <div class="input-inner">
+                <input type="radio" name="delivery" id="delivery-3">
+                <label for="delivery-3"><span>0, 00 zł</span>Dostawa 3</label>
               </div>
             </div>
-            <button type="submit" class="btn-submit">Zapisz</button>
-          </form>
-        </div>
-        <div class="account-inner-content" data-tab-content="my-orders" style="display: none">
-          <div class="my-orders-inner">
-            <div class="my-orders-inner__head">
-              <div class="date">
-                <span>Moje zamówienie №859458</span>
-                <p>od 14 czerwca 2022 r.</p>
+            <div class="content">
+              <div class="title">
+                <strong>Metoda płatności</strong>
               </div>
-              <div class="status">Dostarczone</div>
-            </div>
-            <div class="my-orders-inner__item">
-              <div class="image">
-                <img src="./image/catalog/cart-image.jpg" alt="">
-              </div>
-              <div class="info">
-                <strong class="title">FIRANA MARKIZETA NATURAL</strong>
-                <span class="code">Kod: 12652</span>
-                <p class="text">SZEROKOŚĆ FIRANY (cm): 1222</p>
-                <p class="text">WYSOKOŚĆ FIRANY (cm): 270</p>
-                <p class="option">Z usługą szycia</p>
-                <span class="option-option">Karnisz + żabki;Przelotki: Srebro; Taśma marszcząca: F9Z - 2,5 cm SMOK regulowana x 2</span>
-              </div>
-              <div class="count">
-                <p>Ilość sztuk</p>
-                <span>5</span>
-              </div>
-              <div class="price">
-                <p>Suma</p>
-                <span>19,90 zł</span>
+              <div class="input-inner">
+                <input type="radio" name="method" id="method-1">
+                <label for="method-1"><span>0, 00 zł</span>Metoda 1</label>
               </div>
             </div>
-            <div class="my-orders-inner__footer">
-              <div class="left">
-                <p class="phone">795 256 666</p>
-                <address>Wroclaw, szybowcowa</address>
+
+          </div>
+          <div class="content-my-orders">
+            <div class="my-orders-inner">
+              <div class="title">
+                <strong>Podsumowanie zamowienia</strong>
               </div>
-              <div class="right">
-                <p>Suma zamówienia</p>
-                <span>39,8 Zł</span>
+              <div class="my-orders-inner__item">
+                <div class="image">
+                  <img src="./image/catalog/cart-image.jpg" alt="">
+                </div>
+                <div class="info">
+                  <strong class="title">FIRANA MARKIZETA NATURAL</strong>
+                  <span class="code">Kod: 12652</span>
+                  <p class="text">SZEROKOŚĆ FIRANY (cm): 1222</p>
+                  <p class="text">WYSOKOŚĆ FIRANY (cm): 270</p>
+                  <p class="option">Z usługą szycia</p>
+                  <span class="option-option">Karnisz + żabki;Przelotki: Srebro; Taśma marszcząca: F9Z - 2,5 cm SMOK regulowana x 2</span>
+                </div>
+                <div class="count">
+                  <p>Ilość sztuk</p>
+                  <span>5</span>
+                </div>
+                <div class="price">
+                  <p>Suma</p>
+                  <span>19,90 zł</span>
+                </div>
+              </div>
+              <div class="my-orders-inner__item">
+                <div class="image">
+                  <img src="./image/catalog/cart-image.jpg" alt="">
+                </div>
+                <div class="info">
+                  <strong class="title">FIRANA MARKIZETA NATURAL</strong>
+                  <span class="code">Kod: 12652</span>
+                  <p class="text">SZEROKOŚĆ FIRANY (cm): 1222</p>
+                  <p class="text">WYSOKOŚĆ FIRANY (cm): 270</p>
+                  <p class="option">Z usługą szycia</p>
+                  <span class="option-option">Karnisz + żabki;Przelotki: Srebro; Taśma marszcząca: F9Z - 2,5 cm SMOK regulowana x 2</span>
+                </div>
+                <div class="count">
+                  <p>Ilość sztuk</p>
+                  <span>5</span>
+                </div>
+                <div class="price">
+                  <p>Suma</p>
+                  <span>19,90 zł</span>
+                </div>
+              </div>
+              <div class="my-orders-inner__item">
+                <div class="image">
+                  <img src="./image/catalog/cart-image.jpg" alt="">
+                </div>
+                <div class="info">
+                  <strong class="title">FIRANA MARKIZETA NATURAL</strong>
+                  <span class="code">Kod: 12652</span>
+                  <p class="text">SZEROKOŚĆ FIRANY (cm): 1222</p>
+                  <p class="text">WYSOKOŚĆ FIRANY (cm): 270</p>
+                  <p class="option">Z usługą szycia</p>
+                  <span class="option-option">Karnisz + żabki;Przelotki: Srebro; Taśma marszcząca: F9Z - 2,5 cm SMOK regulowana x 2</span>
+                </div>
+                <div class="count">
+                  <p>Ilość sztuk</p>
+                  <span>5</span>
+                </div>
+                <div class="price">
+                  <p>Suma</p>
+                  <span>19,90 zł</span>
+                </div>
+              </div>
+              <div class="my-orders-inner__footer">
+                <div class="left">
+                  <p>Kateryna lubska</p>
+                  <p>Wroclaw, Szybowcowa 85/7</p>
+                  <p>54-123</p>
+                  <p>795 256 666</p>
+                  <p>Sposób wysyłki: Dostawa 1</p>
+                </div>
+                <div class="right">
+                  <p>Suma zamówienia</p>
+                  <span>39,8 Zł</span>
+                </div>
               </div>
             </div>
           </div>
-          <div class="my-orders-inner">
-            <div class="my-orders-inner__head">
-              <div class="date">
-                <span>Moje zamówienie №859458</span>
-                <p>od 14 czerwca 2022 r.</p>
-              </div>
-              <div class="status">Dostarczone</div>
-            </div>
-            <div class="my-orders-inner__item">
-              <div class="image">
-                <img src="./image/catalog/cart-image.jpg" alt="">
-              </div>
-              <div class="info">
-                <strong class="title">FIRANA MARKIZETA NATURAL</strong>
-                <span class="code">Kod: 12652</span>
-                <p class="text">SZEROKOŚĆ FIRANY (cm): 1222</p>
-                <p class="text">WYSOKOŚĆ FIRANY (cm): 270</p>
-                <p class="option">Z usługą szycia</p>
-                <span class="option-option">Karnisz + żabki;Przelotki: Srebro; Taśma marszcząca: F9Z - 2,5 cm SMOK regulowana x 2</span>
-              </div>
-              <div class="count">
-                <p>Ilość sztuk</p>
-                <span>5</span>
-              </div>
-              <div class="price">
-                <p>Suma</p>
-                <span>19,90 zł</span>
-              </div>
-            </div>
-            <div class="my-orders-inner__footer">
-              <div class="left">
-                <p class="phone">795 256 666</p>
-                <address>Wroclaw, szybowcowa</address>
-              </div>
-              <div class="right">
-                <p>Suma zamówienia</p>
-                <span>39,8 Zł</span>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="account-inner-content" data-tab-content="favorite" style="display: none">
-          <div class="account-inner-favorite">
-            <div class="account-inner-favorite__product">
-              <div class="alert">Szyta na wymiar</div>
-              <div class="favorite">
-                <button type="button">
-                  <svg width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path fill-rule="evenodd" clip-rule="evenodd"
-                          d="M17.3922 2.83372C15.6521 0.59097 12.1593 0.967096 10.9367 3.52889C10.5602 4.31772 9.43734 4.31772 9.06085 3.52889C7.83817 0.967097 4.34541 0.590973 2.60534 2.83372L2.29599 3.23245C0.808841 5.14921 1.02357 7.88262 2.79177 9.54366L9.74438 16.0749C9.87139 16.1942 9.94065 16.2585 9.99422 16.2998C9.9958 16.301 9.99731 16.3021 9.99876 16.3032C10.0002 16.3021 10.0017 16.301 10.0033 16.2998C10.0569 16.2585 10.1261 16.1942 10.2531 16.0749L17.2057 9.54366C18.9739 7.88262 19.1887 5.14921 17.7015 3.23244L17.3922 2.83372ZM10.0342 3.09816C11.5774 -0.13531 15.986 -0.610053 18.1823 2.22072L18.4916 2.61945C20.2949 4.94374 20.0346 8.25831 17.8904 10.2725L10.9239 16.8168C10.8162 16.918 10.7108 17.0171 10.6135 17.092C10.5053 17.1753 10.3685 17.2604 10.1913 17.2951C10.0642 17.3201 9.93336 17.3201 9.80619 17.2951C9.62902 17.2604 9.49219 17.1753 9.38403 17.092C9.28675 17.0171 9.18129 16.918 9.07363 16.8168L2.10709 10.2725C-0.0370529 8.25831 -0.29743 4.94375 1.5059 2.61945L1.81526 2.22073C4.01155 -0.610048 8.42008 -0.135311 9.96333 3.09817C9.96929 3.11066 9.97435 3.11381 9.97665 3.11519C9.98083 3.1177 9.98845 3.12051 9.99876 3.12051C10.0091 3.12051 10.0167 3.1177 10.0209 3.11519C10.0232 3.11381 10.0282 3.11066 10.0342 3.09816Z"
-                          fill="#101010" />
-                  </svg>
-                </button>
-              </div>
-              <a href="#">
-                <div class="image"><img src="./image/catalog/product-preview.jpg" alt="Product"></div>
-                <div class="info">
-                  <p class="title">FIRANA MARKIZETA NATURAL</p>
-                  <span class="price">19,90 zł</span>
-                </div>
-              </a>
-            </div>
-            <div class="account-inner-favorite__product">
-              <div class="alert">Szyta na wymiar</div>
-              <div class="favorite">
-                <button type="button">
-                  <svg width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path fill-rule="evenodd" clip-rule="evenodd"
-                          d="M17.3922 2.83372C15.6521 0.59097 12.1593 0.967096 10.9367 3.52889C10.5602 4.31772 9.43734 4.31772 9.06085 3.52889C7.83817 0.967097 4.34541 0.590973 2.60534 2.83372L2.29599 3.23245C0.808841 5.14921 1.02357 7.88262 2.79177 9.54366L9.74438 16.0749C9.87139 16.1942 9.94065 16.2585 9.99422 16.2998C9.9958 16.301 9.99731 16.3021 9.99876 16.3032C10.0002 16.3021 10.0017 16.301 10.0033 16.2998C10.0569 16.2585 10.1261 16.1942 10.2531 16.0749L17.2057 9.54366C18.9739 7.88262 19.1887 5.14921 17.7015 3.23244L17.3922 2.83372ZM10.0342 3.09816C11.5774 -0.13531 15.986 -0.610053 18.1823 2.22072L18.4916 2.61945C20.2949 4.94374 20.0346 8.25831 17.8904 10.2725L10.9239 16.8168C10.8162 16.918 10.7108 17.0171 10.6135 17.092C10.5053 17.1753 10.3685 17.2604 10.1913 17.2951C10.0642 17.3201 9.93336 17.3201 9.80619 17.2951C9.62902 17.2604 9.49219 17.1753 9.38403 17.092C9.28675 17.0171 9.18129 16.918 9.07363 16.8168L2.10709 10.2725C-0.0370529 8.25831 -0.29743 4.94375 1.5059 2.61945L1.81526 2.22073C4.01155 -0.610048 8.42008 -0.135311 9.96333 3.09817C9.96929 3.11066 9.97435 3.11381 9.97665 3.11519C9.98083 3.1177 9.98845 3.12051 9.99876 3.12051C10.0091 3.12051 10.0167 3.1177 10.0209 3.11519C10.0232 3.11381 10.0282 3.11066 10.0342 3.09816Z"
-                          fill="#101010" />
-                  </svg>
-                </button>
-              </div>
-              <a href="#">
-                <div class="image"><img src="./image/catalog/product-preview.jpg" alt="Product"></div>
-                <div class="info">
-                  <p class="title">FIRANA MARKIZETA NATURAL</p>
-                  <span class="price">19,90 zł</span>
-                </div>
-              </a>
-            </div>
-            <div class="account-inner-favorite__product">
-              <div class="alert">Szyta na wymiar</div>
-              <div class="favorite">
-                <button type="button">
-                  <svg width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path fill-rule="evenodd" clip-rule="evenodd"
-                          d="M17.3922 2.83372C15.6521 0.59097 12.1593 0.967096 10.9367 3.52889C10.5602 4.31772 9.43734 4.31772 9.06085 3.52889C7.83817 0.967097 4.34541 0.590973 2.60534 2.83372L2.29599 3.23245C0.808841 5.14921 1.02357 7.88262 2.79177 9.54366L9.74438 16.0749C9.87139 16.1942 9.94065 16.2585 9.99422 16.2998C9.9958 16.301 9.99731 16.3021 9.99876 16.3032C10.0002 16.3021 10.0017 16.301 10.0033 16.2998C10.0569 16.2585 10.1261 16.1942 10.2531 16.0749L17.2057 9.54366C18.9739 7.88262 19.1887 5.14921 17.7015 3.23244L17.3922 2.83372ZM10.0342 3.09816C11.5774 -0.13531 15.986 -0.610053 18.1823 2.22072L18.4916 2.61945C20.2949 4.94374 20.0346 8.25831 17.8904 10.2725L10.9239 16.8168C10.8162 16.918 10.7108 17.0171 10.6135 17.092C10.5053 17.1753 10.3685 17.2604 10.1913 17.2951C10.0642 17.3201 9.93336 17.3201 9.80619 17.2951C9.62902 17.2604 9.49219 17.1753 9.38403 17.092C9.28675 17.0171 9.18129 16.918 9.07363 16.8168L2.10709 10.2725C-0.0370529 8.25831 -0.29743 4.94375 1.5059 2.61945L1.81526 2.22073C4.01155 -0.610048 8.42008 -0.135311 9.96333 3.09817C9.96929 3.11066 9.97435 3.11381 9.97665 3.11519C9.98083 3.1177 9.98845 3.12051 9.99876 3.12051C10.0091 3.12051 10.0167 3.1177 10.0209 3.11519C10.0232 3.11381 10.0282 3.11066 10.0342 3.09816Z"
-                          fill="#101010" />
-                  </svg>
-                </button>
-              </div>
-              <a href="#">
-                <div class="image"><img src="./image/catalog/product-preview.jpg" alt="Product"></div>
-                <div class="info">
-                  <p class="title">FIRANA MARKIZETA NATURAL</p>
-                  <span class="price">19,90 zł</span>
-                </div>
-              </a>
-            </div>
-            <div class="account-inner-favorite__product">
-              <div class="alert">Szyta na wymiar</div>
-              <div class="favorite">
-                <button type="button">
-                  <svg width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path fill-rule="evenodd" clip-rule="evenodd"
-                          d="M17.3922 2.83372C15.6521 0.59097 12.1593 0.967096 10.9367 3.52889C10.5602 4.31772 9.43734 4.31772 9.06085 3.52889C7.83817 0.967097 4.34541 0.590973 2.60534 2.83372L2.29599 3.23245C0.808841 5.14921 1.02357 7.88262 2.79177 9.54366L9.74438 16.0749C9.87139 16.1942 9.94065 16.2585 9.99422 16.2998C9.9958 16.301 9.99731 16.3021 9.99876 16.3032C10.0002 16.3021 10.0017 16.301 10.0033 16.2998C10.0569 16.2585 10.1261 16.1942 10.2531 16.0749L17.2057 9.54366C18.9739 7.88262 19.1887 5.14921 17.7015 3.23244L17.3922 2.83372ZM10.0342 3.09816C11.5774 -0.13531 15.986 -0.610053 18.1823 2.22072L18.4916 2.61945C20.2949 4.94374 20.0346 8.25831 17.8904 10.2725L10.9239 16.8168C10.8162 16.918 10.7108 17.0171 10.6135 17.092C10.5053 17.1753 10.3685 17.2604 10.1913 17.2951C10.0642 17.3201 9.93336 17.3201 9.80619 17.2951C9.62902 17.2604 9.49219 17.1753 9.38403 17.092C9.28675 17.0171 9.18129 16.918 9.07363 16.8168L2.10709 10.2725C-0.0370529 8.25831 -0.29743 4.94375 1.5059 2.61945L1.81526 2.22073C4.01155 -0.610048 8.42008 -0.135311 9.96333 3.09817C9.96929 3.11066 9.97435 3.11381 9.97665 3.11519C9.98083 3.1177 9.98845 3.12051 9.99876 3.12051C10.0091 3.12051 10.0167 3.1177 10.0209 3.11519C10.0232 3.11381 10.0282 3.11066 10.0342 3.09816Z"
-                          fill="#101010" />
-                  </svg>
-                </button>
-              </div>
-              <a href="#">
-                <div class="image"><img src="./image/catalog/product-preview.jpg" alt="Product"></div>
-                <div class="info">
-                  <p class="title">FIRANA MARKIZETA NATURAL</p>
-                  <span class="price">19,90 zł</span>
-                </div>
-              </a>
-            </div>
-          </div>
-        </div>
-        <div class="account-inner-content" data-tab-content="my-addresses" style="display: none">
-          <div class="my-addresses">
-            <div class="my-addresses-inputs">
-              <div class="my-addresses-inputs__item">
-                <label for="business">Firma</label>
-                <input type="text" id="business" name="bussiness" placeholder="Firma">
-              </div>
-              <div class="my-addresses-inputs__item">
-                <label for="voivodeship">Województwo</label>
-                <input type="text" id="voivodeship" name="voivodeship" placeholder="Województwo">
-              </div>
-              <div class="my-addresses-inputs__item">
-                <label for="street-and-house-number"><span>*</span> Ulica i numer domu</label>
-                <input type="text" id="street-and-house-number" name="street-and-house-number" placeholder="Ulica i numer domu">
-              </div>
-              <div class="my-addresses-inputs__item">
-                <label for="city"><span>*</span> Miejscowość</label>
-                <input type="text" id="city" name="city" placeholder="Miejscowość">
-              </div>
-              <div class="my-addresses-inputs__item">
-                <label for="number-nip">Numer NIP</label>
-                <input type="text" id="number-nip" name="number-nip" placeholder="Numer NIP">
-              </div>
-              <div class="my-addresses-inputs__item">
-                <label for="zip-code"><span>*</span> Kod pocztowy</label>
-                <input type="text" id="zip-code" name="zip-code" placeholder="Kod pocztowy">
-              </div>
-            </div>
-            <div class="title">
-              <strong>Dane do faktury</strong>
-            </div>
-            <div class="my-addresses-inputs">
-              <div class="my-addresses-inputs__item">
-                <label for="name">Imię</label>
-                <input type="text" id="name" name="name" placeholder="Imię">
-              </div>
-              <div class="my-addresses-inputs__item">
-                <label for="voivodeship-1">Województwo</label>
-                <input type="text" id="voivodeship-1" name="voivodeship-1" placeholder="Województwo">
-              </div>
-              <div class="my-addresses-inputs__item">
-                <label for="last-name">Nazwisko</label>
-                <input type="text" id="last-name" name="last-name" placeholder="Nazwisko">
-              </div>
-              <div class="my-addresses-inputs__item">
-                <label for="city-1">Miejscowość</label>
-                <input type="text" id="city-1" name="city-1" placeholder="Miejscowość">
-              </div>
-              <div class="my-addresses-inputs__item">
-                <label for="business-1">Firma</label>
-                <input type="text" id="business-1" name="bussiness-1" placeholder="Firma">
-              </div>
-              <div class="my-addresses-inputs__item">
-                <label for="zip-code-1">Kod pocztowy</label>
-                <input type="text" id="zip-code-1" name="zip-code-1" placeholder="Kod pocztowy">
-              </div>
-              <div class="my-addresses-inputs__item">
-                <label for="street-and-house-number-1">Ulica i numer domu</label>
-                <input type="text" id="street-and-house-number-1" name="street-and-house-number-1" placeholder="Ulica i numer domu">
-              </div>
-              <div class="my-addresses-inputs__item">
-                <label for="phone">Numer telefonu</label>
-                <input type="tel" id="phone" name="phone" placeholder="Numer telefonu">
-              </div>
-              <div class="my-addresses-inputs__item">
-                <label for="number-nip-1">Numer NIP</label>
-                <input type="text" id="number-nip-1" name="number-nip-1" placeholder="Numer NIP">
-                <span>Jeżeli w tym kroku nie podasz NIP-u I innych danych firmowych, możesz nie otrzymać faktury za ten zakup.</span>
-              </div>
-            </div>
+          <div class="content-footer">
+            <label class="register-politics">
+              <input type="checkbox" required>
+              <p>Potwierdzam, że zapoznałem się z <b><a href="#" class="link">polityką prywatności</a></b> sklepu.</p>
+            </label>
+            <label class="register-rules">
+              <input type="checkbox" required>
+              <p>Potwierdzam, że zapoznałem się i akceptuję <b><a href="#" class="link">regulamin sklepu</a></b></p>
+            </label>
+            <label class="register-rules">
+              <input type="checkbox" required>
+              <p>Produkt specjalnie przygotowany pod zlecenie Klienta (szyty na miarę), nie podlega zwrotowi</p>
+            </label>
+            <button type="button" class="btn-order">Złóż zamówienie</button>
           </div>
         </div>
       </div>

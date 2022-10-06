@@ -378,3 +378,21 @@ document.addEventListener('DOMContentLoaded', function () {
 
   ;
 });
+var tabButtonsOrders = document.querySelectorAll('.sending-order-inner .sending-order-inner__tab'),
+    loginInnerOrders = document.querySelector('.sending-order-inner__content .account-login');
+tabButtonsOrders.forEach(function (button) {
+  button.addEventListener('click', function () {
+    tabButtonsOrders.forEach(function (elem) {
+      return elem.classList.remove('active');
+    });
+    button.classList.add('active');
+
+    if (button.dataset.tab == 'new-client') {
+      loginInnerOrders.style.display = 'none';
+    }
+
+    if (button.dataset.tab == 'have-account') {
+      loginInnerOrders.style.display = 'block';
+    }
+  });
+});
